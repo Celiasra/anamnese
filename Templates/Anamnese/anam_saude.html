@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} SAÚDE {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+
+<form method="post">
+    <div class="form-group">
+        <label for="saude_tem_questao">Tem alguma questão relativa a saúde (ou de nascimento) que seja relevante?</label>
+        <input type="text" name="saude_tem_questao" placeholder="" class="form-control" value="{{request.form['saude_tem_questao'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_relate">Se SIM, relate:</label>
+        <input type="text" name="saude_relate" placeholder="" class="form-control" value="{{request.form['saude_relate'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_cirurgia">Já passou por cirurgias?</label>
+        <input type="text" name="saude_cirurgia" placeholder="" class="form-control" value="{{request.form['saude_cirurgia'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_ciruria_qual">Se SIM, quais</label>
+        <input type="text" name="saude_ciruria_qual" placeholder="" class="form-control" value="{{request.form['saude_ciruria_qual'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_acidente">Já sofreu algum acidente?</label>
+        <input type="text" name="saude_acidente" placeholder="" class="form-control" value="{{request.form['saude_acidente'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_acidente_como_foi">Se SIM, como foi</label>
+        <input type="text" name="saude_acidente_como_foi" placeholder="" class="form-control" value="{{request.form['saude_acidente_como_foi'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_doencas_inf">Quais doenças infantis já teve?</label>
+        <input type="text" name="saude_doencas_inf" placeholder="" class="form-control" value="{{request.form['saude_doencas_inf'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_alergia">A criança apresenta alguma alergia?</label>
+        <input type="text" name="saude_alergia" placeholder="" class="form-control" value="{{request.form['saude_alergia'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_alergia_qual">Se SIM, quais?</label>
+        <input type="text" name="saude_alergia_qual" placeholder="" class="form-control" value="{{request.form['saude_alergia_qual'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_alergia_proc">Quais procedimentos a família segue em caso de reação alérgica</label>
+        <input type="text" name="saude_alergia_proc" placeholder="" class="form-control" value="{{request.form['saude_alergia_proc'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_alergia_fam">A família tem alguma alergia</label>
+        <input type="text" name="saude_alergia_fam" placeholder="" class="form-control" value="{{request.form['saude_alergia_fam'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_alergia_fam_qual">Se SIM, quais?</label>
+        <input type="text" name="saude_alergia_fam_qual" placeholder="" class="form-control" value="{{request.form['saude_alergia_fam_qual'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_convulsao">A criança tem ou teve convulsões</label>
+        <input type="text" name="saude_convulsao" placeholder="" class="form-control" value="{{request.form['saude_convulsao'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_convulsao_sit">Em quais situações</label>
+        <input type="text" name="saude_convulsao_sit" placeholder="" class="form-control" value="{{request.form['saude_convulsao_sit'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_otite">A criança tevm ou teve otite (infecção no ouvido)?</label>
+        <input type="text" name="saude_otite" placeholder="" class="form-control" value="{{request.form['saude_otite'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_otite_freq">Com que frequência?</label>
+        <input type="text" name="saude_otite_freq" placeholder="" class="form-control" value="{{request.form['saude_otite_freq'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_audiom">A criança já fez audiometria?</label>
+        <input type="text" name="saude_audiom" placeholder="" class="form-control" value="{{request.form['saude_audiom'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_audiom_qdo">Se SIM, quando?</label>
+        <input type="text" name="saude_audiom_qdo" placeholder="" class="form-control" value="{{request.form['saude_audiom_qdo'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_audiom_alter">Foi constatada alguma alteração quanto à aldição?</label>
+        <input type="text" name="saude_audiom_alter" placeholder="" class="form-control" value="{{request.form['saude_audiom_alter'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_audiom_grav">Qual tipo/gravidade?</label>
+        <input type="text" name="saude_audiom_grav" placeholder="" class="form-control" value="{{request.form['saude_audiom_grav'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_exam_oft">Já foi submetido a exame oftalmológico?</label>
+        <input type="text" name="saude_exam_oft" placeholder="" class="form-control" value="{{request.form['saude_exam_oft'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_exam_oft_qdo">Se SIM, quando?</label>
+        <input type="text" name="saude_exam_oft_qdo" placeholder="" class="form-control" value="{{request.form['saude_exam_oft_qdo'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_exam_oft_alt">Foi constatada alguma alteração?</label>
+        <input type="text" name="saude_exam_oft_alt" placeholder="" class="form-control" value="{{request.form['saude_exam_oft_alt'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="saude_exam_oft_grav">Qual tipo/gravidade?</label>
+        <input type="text" name="saude_exam_oft_grav" placeholder="" class="form-control" value="{{request.form['saude_exam_oft_grav'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

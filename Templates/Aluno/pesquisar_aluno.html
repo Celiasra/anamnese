@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='pesquisaraluno.css')}}">
+    <h3>{% block title %} BEM VINDO AO CADASTRO DE ALUNO! {% endblock %} </h3>
+    {% for aluno in alunos %}
+
+<div class="conteudo">
+    <div class="lista">
+        <a class="pesqaluno" href="{{ url_for('detalhe_aluno', ra=aluno['ra'])}}">
+            <label_aluno>{{ aluno['nome_aluno'] }}</label_aluno>
+        </a>
+        <span class="badge badge-primary">{{ aluno['ra'] }}</span>
+        <hr>
+    </div>
+</div>
+    {% endfor %}
+{% endblock %}
+
+

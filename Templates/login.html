@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}">
+
+    <h3>Insira as informações para acesso à área logada!</h3>
+        <form method="POST" action="/autenticar" id="formulario" name="formulario">
+            <input type="hidden" name="proxima" value="{{ proxima or '/'}}">
+            <label>Nome de usuário:</label>
+            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Insira seu usuario" required>
+            <label>Senha:</label>
+            <input class="form-control" type="password" name="senha" id="senha" placeholder="Insira sua senha" required><br>
+            <button class="btn btn-primary" type="submit" onclick="validar()" />Entrar</button>
+        </form>
+
+<script>
+
+// pegando o valor do usuario pelos names
+var nome=formulario.usuario;
+ /* Função Validar */
+function validar(){
+ // verificar se o usuario está vazio
+        if (usuario.value =="") {
+        alert("Nome não informado");
+// Deixa o input com o focus
+usuario.focus();
+
+  }
+}
+</script>
+
+{% endblock %}

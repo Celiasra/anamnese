@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} VIDA SOCIAL DA CRIANÇA {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+<form method="post">
+    <div class="form-group">
+        <label for="vs_lazer">O que faz com seu filho em um dia de lazer?</label>
+        <input type="text" name="vs_lazer" placeholder="" class="form-control" value="{{request.form['vs_lazer'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="prim_anos_espacos">Como é a iteração com outras crianças em espaços públicos?</label>
+        <input type="text" name="vs_iter_loc_publico" placeholder="" class="form-control" value="{{request.form['vs_iter_loc_publico'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="vs_iter_casa">Como é a iteração com outras crianças quando as recebe em casa?</label>
+        <input type="text" name="vs_iter_casa" placeholder="" class="form-control" value="{{request.form['vs_iter_casa'] }}"></input>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

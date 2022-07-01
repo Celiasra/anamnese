@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} SONO {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+
+<form method="post">
+    <div class="form-group">
+        <label for="sono_divide_quarto">Divide o quarto com alguém?</label>
+        <input type="text" name="sono_divide_quarto" placeholder="" class="form-control" value="{{request.form['sono_divide_quarto'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="sono_divide_com_quem">Se SIM, com quem?</label>
+        <input type="text" name="sono_divide_com_quem" placeholder="" class="form-control" value="{{request.form['sono_divide_com_quem'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="sono_dorme_dia">Dorme durante o dia?</label>
+        <input type="text" name="sono_dorme_dia" placeholder="" class="form-control" value="{{request.form['sono_dorme_dia'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="sono_tem_rotina">Tem rotina ou hábitos para dormir?</label>
+        <input type="text" name="sono_tem_rotina" placeholder="" class="form-control" value="{{request.form['sono_tem_rotina'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="sono_qual_rotina">Quais</label>
+        <input type="text" name="sono_qual_rotina" placeholder="" class="form-control" value="{{request.form['sono_qual_rotina'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="vp_quais_atit">Como é o sono? (pesado, agitado, com pesadelos, tranquilo)</label>
+        <input type="text" name="sono_como_e" placeholder="" class="form-control" value="{{request.form['sono_como_e'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+#id{
+    display:none;
+}
+
+body{
+    background-color:white;
+    font-family:nunito;
+}
+
+h3{
+    position:relative;
+    margin-left:0%;
+    border-style:none;
+    margin-top:3%;
+    font-size:22px;
+    color:#FF8C00;
+}
+
+.conteudo{
+    position:relative;
+    display:flex;
+    width:50%;
+    margin-bottom:2%;
+    left:25%;
+}
+
+a{
+    text-decoration:none;
+    text-align:center;
+    color:green;
+    font-weight:bold;
+}
+
+.lista{
+    position:relative;
+    top:10%;
+    margin-top:0%;
+    left:40%;
+    border-bottom:none;
+}
+

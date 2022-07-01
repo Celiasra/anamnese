@@ -1,0 +1,68 @@
+#id{
+    display:none;
+}
+
+body{
+    background-color:white;
+    font-family:nunito;
+}
+
+h3{
+    position:relative;
+    margin-left:00%;
+    border-style:none;
+    margin-top:3%;
+    font-size:22px;
+    color:#00CD00;
+}
+
+.cad_resp{
+    position:relative;
+    display:block;
+    width:40%;
+    top:20%;
+    left:30%;
+    border-radius:10px;
+    padding:10px;
+    background-color:#00CD00;
+    color:white;
+    margin-bottom:5%;
+}
+
+form{
+    position:relative;
+    display:block;
+    width:90%;
+    margin-top:0%;
+    margin-bottom:5%;
+    left:2.5%;
+    padding:20px;
+}
+
+input{
+    border-radius:5px;
+    background-color:transparent;
+    border:solid 2px white;
+    padding:5px;
+    margin-top:2%;
+}
+
+button{
+    padding:10px;
+    background-color:#FF8C00;
+    color:#ffffff;
+    font-weight:bold;
+    border-radius:5px;
+    margin-top:4%;
+    cursor:pointer;
+    left:3%;
+    width:30%;
+    border:none;
+    font-size:16px;
+}
+
+button:hover{
+    background-color:#1E90FF;
+    color:white;
+    transition:ease-in 0.3s;
+}

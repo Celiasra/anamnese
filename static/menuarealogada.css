@@ -1,0 +1,47 @@
+#id{
+    display:none;
+}
+
+body{
+    background-color:white;
+    font-family:nunito;
+}
+
+h3{
+    position:absolute;
+    margin-left:36%;
+    border-style:none;
+    top:20%;
+    font-size:22px;
+    color:#00CD00;
+}
+
+form{
+    position:relative;
+    display:block;
+    float:left;
+    width:10%;
+    margin-top:10%;
+    left:37%;
+    padding:20px;
+}
+
+button{
+    padding:10px;
+    background-color:#FF8C00;
+    color:#ffffff;
+    font-weight:bold;
+    border-radius:5px;
+    margin-top:0%;
+    cursor:pointer;
+    left:22%;
+    width:100%;
+    border:none;
+    font-size:16px;
+}
+
+button:hover{
+    background-color:#1E90FF;
+    color:white;
+    transition:ease-in 0.3s;
+}

@@ -1,0 +1,65 @@
+#id{
+    display:none;
+}
+
+body{
+    background-color:white;
+    font-family:nunito;
+}
+
+h3{
+    position:absolute;
+    margin-left:34%;
+    border-style:none;
+    top:20%;
+    font-size:22px;
+    color:#FF8C00;
+}
+
+form{
+    position:relative;
+    margin-top:10%;
+    width:20%;
+    align-items: center;
+    background-color:#00CD00;
+    border-radius:15px;
+    margin-left:39%;
+    padding:10px;
+}
+
+input{
+    font-family:nunito;
+    background-color:transparent;
+    border: solid 2px white;
+    border-radius:5px;
+    width:50%;
+    padding:10px;
+    margin-left:22%;
+    color:white;
+}
+
+label{
+    font-family:nunito;
+    margin-top:5%;
+    margin-left:22%;
+    color:white;
+}
+
+button{
+    padding:10px;
+    background-color:white;
+    color:#1E90FF;
+    font-weight:bold;
+    border-radius:5px;
+    margin-top:5%;
+    cursor:pointer;
+    margin-left:22%;
+    width:40%;
+    border:none;
+}
+
+button:hover{
+    background-color:#FFD700;
+    color:black;
+    transition:ease-in 0.3s;
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} REAÇÕES EMOCIONAIS {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+
+<form method="post">
+    <div class="form-group">
+        <label for="rea_emo_carac_marc">Em linhas gerais, quais são as características mais marcantes da criança?</label>
+        <input type="text" name="rea_emo_carac_marc" placeholder="" class="form-control" value="{{request.form['rea_emo_carac_marc'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rea_emo_obj_efet">Usa algum objeto de apoio afetivo (paninho, brinquedo, etc?</label>
+        <input type="text" name="rea_emo_obj_efet" placeholder="" class="form-control" value="{{request.form['rea_emo_obj_efet'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rea_emo_obj_efet_sit">Quais? Em que situações usa?</label>
+        <input type="text" name="rea_emo_obj_efet_sit" placeholder="" class="form-control" value="{{request.form['rea_emo_obj_efet_sit'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rea_emo_rel_pai">Como é a relação com o pai?</label>
+        <input type="text" name="rea_emo_rel_pai" placeholder="" class="form-control" value="{{request.form['rea_emo_rel_pai'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rea_emo_rel_mae">Como é a relação com a mãe?</label>
+        <input type="text" name="rea_emo_rel_mae" placeholder="" class="form-control" value="{{request.form['rea_emo_rel_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rea_emo_rel_avos">Como é a relação com os avós?</label>
+        <input type="text" name="rea_emo_rel_avos" placeholder="" class="form-control" value="{{request.form['rea_emo_rel_avos'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rea_emo_rel_cuid">Como é a relação com os cuidadores?</label>
+        <input type="text" name="rea_emo_rel_cuid" placeholder="" class="form-control" value="{{request.form['rea_emo_rel_cuid'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+
+{% endblock %}

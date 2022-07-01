@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css')}}">
+
+<h3>{% block title %} CADASTRANDO UM ALUNO 1 {% endblock %}</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nome">Nome do Aluno</label>
+        <input type="text" name="nome_aluno" placeholder="" class="form-control" value="{{request.form['nome_aluno'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="nascimento">Data de Nascimento do Aluno</label>
+        <input type="integer" name="nascimento" placeholder="" class="form-control" value="{{request.form['nascimento'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="num_ser">Série</label>
+        <input type="text" name="num_ser" placeholder="" class="form-control" value="{{request.form['num_ser'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="turma">Turma</label>
+        <input type="text" name="turma" placeholder="" class="form-control" value="{{request.form['turma'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="sexo">Sexo</label>
+        <input type="text" name="sexo" placeholder="" class="form-control" value="{{request.form['sexo'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="situacao">Situação</label>
+        <input type="text" name="situacao" placeholder="" class="form-control" value="{{request.form['situacao'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="nome_mae">Nome da Mãe</label>
+        <input type="text" name="nome_mae" placeholder="" class="form-control" value="{{request.form['nome_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="profissao_mae">Profissão da Mãe</label>
+        <input type="text" name="profissao_mae" placeholder="" class="form-control" value="{{request.form['profissao_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="localtrab_mae">Local de Trabalho da mãe</label>
+        <input type="text" name="localtrab_mae" placeholder="" class="form-control" value="{{request.form['localtrab_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="nasc_mae">Data de Nascimento da Mãe</label>
+        <input type="text" name="nasc_mae" placeholder="" class="form-control" value="{{request.form['nasc_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="fone_mae">Telefone da Mãe</label>
+        <input type="integer" name="fone_mae" placeholder="" class="form-control" value="{{request.form['fone_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="nome_pai">Nome do Pai</label>
+        <input type="text" name="nome_pai" placeholder="" class="form-control" value="{{request.form['nome_pai'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="profissao_pai">Profissão do Pai</label>
+        <input type="text" name="profissao_pai" placeholder="" class="form-control" value="{{request.form['profissao_pai'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="localtrab_pai">Local de Trabalho do Pai</label>
+        <input type="text" name="localtrab_pai" placeholder="" class="form-control" value="{{request.form['localtrab_pai'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="nasc_pai">Data de Nascimento do Pai</label>
+        <input type="text" name="nasc_pai" placeholder="" class="form-control" value="{{request.form['nasc_pai'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="fone_pai">Telefone do Pai</label>
+        <input type="integer" name="fone_pai" placeholder="" class="form-control" value="{{request.form['fone_pai'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+</form>
+
+{% endblock %}

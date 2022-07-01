@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} DIA A DIA DA CRIANÇA {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+
+<form method="post">
+    <div class="form-group">
+        <label for="dia_dia_horas_dormir">Que horas a criança costuma dormir?</label>
+        <input type="text" name="dia_dia_horas_dormir" placeholder="" class="form-control" value="{{request.form['dia_dia_horas_dormir'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_horas_acordar">Que horas a criança costuma acordar?</label>
+        <input type="text" name="dia_dia_horas_acordar" placeholder="" class="form-control" value="{{request.form['dia_dia_horas_acordar'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_faz_ativ">Faz alguma atividade fora da escola?</label>
+        <input type="text" name="dia_dia_faz_ativ" placeholder="" class="form-control" value="{{request.form['dia_dia_faz_ativ'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_quais">Quais</label>
+        <input type="text" name="dia_dia_quais" placeholder="" class="form-control" value="{{request.form['dia_dia_quais'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_qtas_vezes">Quantas vezes por semana?</label>
+        <input type="text" name="dia_dia_qtas_vezes" placeholder="" class="form-control" value="{{request.form['dia_dia_qtas_vezes'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_brinca_so">Brinca Sozinho?</label>
+        <input type="text" name="dia_dia_brinca_so" placeholder="" class="form-control" value="{{request.form['dia_dia_brinca_so'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_com_quem">Se NÃO, com quem?</label>
+        <input type="text" name="dia_dia_com_quem" placeholder="" class="form-control" value="{{request.form['dia_dia_com_quem'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_cont_elet">A criança tem contato com aparelhos eletrônicos quando esta em casa (tablet, celular, computador, etc)?</label>
+        <input type="text" name="dia_dia_cont_elet" placeholder="" class="form-control" value="{{request.form['dia_dia_cont_elet'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_elet_quais">Se SIM, quais?</label>
+        <input type="text" name="dia_dia_elet_quais" placeholder="" class="form-control" value="{{request.form['dia_dia_elet_quais'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_org_brinq">Costuma participar da organização de brinquedos?</label>
+        <input type="text" name="dia_dia_org_brinq" placeholder="" class="form-control" value="{{request.form['dia_dia_org_brinq'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_hab_leitura">A família tem o hábito de leitura em casa?</label>
+        <input type="text" name="dia_dia_hab_leitura" placeholder="" class="form-control" value="{{request.form['dia_dia_hab_leitura'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_ouvir_mus">A criança gosta de ouvir música?</label>
+        <input type="text" name="dia_dia_ouvir_mus" placeholder="" class="form-control" value="{{request.form['dia_dia_ouvir_mus'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="dia_dia_tipo_mus">Qual tipo de música?</label>
+        <input type="text" name="dia_dia_tipo_mus" placeholder="" class="form-control" value="{{request.form['dia_dia_tipo_mus'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rel_fam_cuidados_outros">Descreva a rotina da criança em um dia normal (dia útil)</label>
+        <input type="text" name="dia_dia_rotina" placeholder="" class="form-control" value="{{request.form['dia_dia_rotina'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

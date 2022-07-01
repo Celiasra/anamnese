@@ -1,0 +1,60 @@
+#id{
+    display:none;
+}
+
+body{
+    background-color:white;
+    font-family:nunito;
+}
+
+h3{
+    position:relative;
+    margin-left:00%;
+    border-style:none;
+    margin-top:3%;
+    font-size:22px;
+    color:#00CD00;
+}
+
+.cadanamnese{
+    position:relative;
+    display:block;
+    width:40%;
+    top:20%;
+    left:30%;
+    border-radius:10px;
+    padding:10px;
+    background-color:#00CD00;
+    color:white;
+}
+
+form{
+    position:relative;
+    display:block;
+    float:left;
+    width:10%;
+    margin-top:0%;
+    margin-bottom:5%;
+    left:38%;
+    padding:20px;
+}
+
+button{
+    padding:10px;
+    background-color:#FF8C00;
+    color:#ffffff;
+    font-weight:bold;
+    border-radius:5px;
+    margin-top:0%;
+    cursor:pointer;
+    left:22%;
+    width:100%;
+    border:none;
+    font-size:16px;
+}
+
+button:hover{
+    background-color:#1E90FF;
+    color:white;
+    transition:ease-in 0.3s;
+}

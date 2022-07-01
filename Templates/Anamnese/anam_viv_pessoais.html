@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} VIVÊNCIAS PESSOAIS {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+<form method="post">
+    <div class="form-group">
+        <label for="vp_medos">Expressa medos (animais, pessoas, objetos, situações, etc?</label>
+        <input type="text" name="vp_medos" placeholder="" class="form-control" value="{{request.form['vp_medos'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="vp_quais_medos">Quais?</label>
+        <input type="text" name="vp_quais_medos" placeholder="" class="form-control" value="{{request.form['vp_quais_medos'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="vp_quais_atit">Quais atitudes os pais adotam diante desses medos?</label>
+        <input type="text" name="vp_quais_atit" placeholder="" class="form-control" value="{{request.form['vp_quais_atit'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="vp_trauma">Viveu alguma situação traumática (roubo, morte de pessoas próximas, agressão física)?</label>
+        <input type="text" name="vp_trauma" placeholder="" class="form-control" value="{{request.form['vp_trauma'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="vp_trauma_quais">Se SIM, quais?</label>
+        <input type="text" name="vp_trauma_quais" placeholder="" class="form-control" value="{{request.form['vp_trauma_quais'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

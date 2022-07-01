@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} RELACIONAMENTO FAMILIAR {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+<form method="post">
+    <div class="form-group">
+        <label for="rel_fam_momento">Em que momento a família costuma estar reunida:</label>
+        <input type="text" name="rel_fam_momento" placeholder="" class="form-control" value="{{request.form['rel_fam_momento'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rel_fam_ativ_mae">Quais atividades gosta de compartilhar com a mãe?</label>
+        <input type="text" name="rel_fam_ativ_mae" placeholder="" class="form-control" value="{{request.form['rel_fam_ativ_mae'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rel_fam_ativ_pai">Quais atividades gosta de compartilhar com o pai?</label>
+        <input type="text" name="rel_fam_ativ_pai" placeholder="" class="form-control" value="{{request.form['rel_fam_ativ_pai'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rel_fam_rel_irmaos">Como é o relacionamento com os irmãos</label>
+        <input type="text" name="rel_fam_rel_irmaos" placeholder="" class="form-control" value="{{request.form['rel_fam_rel_irmaos'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="rel_fam_cuidados_outros">Fica aos cuidados de outras pessoas? De quem? Como é o relacionamento da criança com essas pessoas?</label>
+        <input type="text" name="rel_fam_cuidados_outros" placeholder="" class="form-control" value="{{request.form['rel_fam_cuidados_outros'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

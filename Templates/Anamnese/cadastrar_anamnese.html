@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_anamnese.css')}}">
+
+<h3>{% block title %} CADASTRO DE ANAMNESE {% endblock %} </h3>
+<div class="cadanamnese">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+</div>
+<br>
+
+<p><form method="get" action="{{ url_for('anam_responsavel', ra=detalhe_aluno['ra']) }}"><button type="submit">Prosseguir</button></form></p>
+<p><form action="{{ url_for('menu_area_logada') }}"><button type="submit">Cancelar</button></form></p>
+{% endblock %}

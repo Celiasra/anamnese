@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} DESENVOLVIMENTO PSICOMOTOR {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+
+<form method="post">
+    <div class="form-group">
+        <label for="psi_gestacao">Como foi o período de gestação e o parto?</label>
+        <input type="text" name="psi_gestacao" placeholder="" class="form-control" value="{{request.form['psi_gestacao'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="psi_engatinhou">Engatinhou?</label>
+        <input type="text" name="psi_engatinhou" placeholder="" class="form-control" value="{{request.form['psi_engatinhou'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="psi_qdo_engatinhou">Com quanto tempo começou a andar?</label>
+        <input type="text" name="psi_qdo_engatinhou" placeholder="" class="form-control" value="{{request.form['psi_qdo_engatinhou'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="psi_como_e">Como é sua movimentação atualmente (adequada, desastrada, cai muito)?</label>
+        <input type="text" name="psi_como_e" placeholder="" class="form-control" value="{{request.form['psi_como_e'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="psi_aspectos">Há aspectos do desenvolvimento da criança com os quais os pais tem dificuldade de lidar ou que sejam motivo de preocupação? Quais?</label>
+        <input type="text" name="psi_aspectos" placeholder="" class="form-control" value="{{request.form['psi_aspectos'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="psi_atend_fora_escola">A criança recebe atualmente, ou já recebeu, atendimento fora da escola, com profissionais das áreas de psicologia,
+        psicopedagogia, fonoaudiologia e/ou neurologia?</label>
+        <input type="text" name="psi_atend_fora_escola" placeholder="" class="form-control" value="{{request.form['psi_atend_fora_escola'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="psi_atend_fora_escola_qual">Se SIM, quais?</label>
+        <input type="text" name="psi_atend_fora_escola_qual" placeholder="" class="form-control" value="{{request.form['psi_atend_fora_escola_qual'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+
+{% endblock %}

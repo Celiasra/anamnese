@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    background-color:white;
+    font-family:nunito;
+}
+
+H1 {
+    border: 2px #eee solid;
+    color: #378B5B;
+    text-align: center;
+    padding: 18px;
+}
+
+H3 {
+    border: 2px #eee solid;
+    color: #378B5B;
+    text-align: center;
+    padding: 14px;
+}
+H4 {
+    border: 2px #eee solid;
+    color: #378B5B;
+    text-align: center;
+    padding: 14px;
+}
+
+nav{
+    width:100%;
+    height:18%;
+    top:0;
+    position:fixed;
+    background-color:#00CD00;
+    border-bottom: 2px solid white;
+    z-index:1;
+}
+
+nav img{
+    position:absolute;
+    left:5%;
+    margin-top:1%;
+}
+
+nav ul{
+    margin-left:60%;
+    top:30%;
+    position:absolute;
+    width:40%;
+}
+
+nav ul li{
+    float:left;
+    list-style:none;
+    font-size:14pt;
+    padding-left:4%;
+}
+
+nav ul li a{
+    position:relative;
+    text-decoration:none;
+    color:white;
+    float:left;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:#FFD700;
+    transition:ease-in 0.5s;
+    border-bottom: solid 3px #FFD700;
+}
+
+#log{
+    background-color:white;
+    border-radius:5px;
+    padding:5px;
+    color:black;
+    top:-5px;
+}
+
+#log:hover{
+    color:black;
+    transition:ease-in 0.3s;
+    border-bottom: none;
+    background-color:#FFD700;
+}
+
+.container{
+    position:absolute;
+    top:15%;
+    width:100%;
+}
+
+.container img{
+    width:100%;
+}
+
+img #id{
+    transition-property: opacity, left, top, height;
+    transition:ease-in 1s;
+}
+
+.rodape{
+    position:fixed;
+    height:3%;
+    width:100%;
+    background-color:#000000;
+    bottom:0px;
+    color:white;
+}
+
+
+}

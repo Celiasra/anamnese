@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_anamnese.css')}}">
+
+-->
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+
+<h3>{% block title %} DADOS DO RESPONSÁVEL {% endblock %}</h3>
+
+<div class="cad_resp">
+
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+
+<form method="post">
+    <div class="form-group">
+        <label for="resp_nome">Nome do Responsável que esta respondendo a pesquisa</label>
+        <input type="text" name="resp_nome" placeholder="" class="form-control" value="{{request.form['resp_nome'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_grau_par">Grau de Parentesco com o Aluno</label>
+        <input type="text" name="resp_grau_par" placeholder="" class="form-control" value="{{request.form['resp_grau_par'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_fone_contato">Telefone para contato</label>
+        <input type="text" name="resp_fone_contato" placeholder="" class="form-control" value="{{request.form['resp_fone_contato'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_resp_val">Você considera que suas respostas são válidas para todos os responsáveis na educação do aluno</label>
+        <input type="text" name="resp_resp_val" placeholder="" class="form-control" value="{{request.form['resp_resp_val'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_reside">Residência</label>
+        <input type="text" name="resp_reside" placeholder="" class="form-control" value="{{request.form['resp_reside'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_tem_irm">Tem irmãos</label>
+        <input type="text" name="resp_tem_irm" placeholder="" class="form-control" value="{{request.form['resp_tem_irm'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_quantos">Quantos</label>
+        <input type="text" name="resp_quantos" placeholder="" class="form-control" value="{{request.form['resp_quantos'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_tem_anim">Tem animal de Estimação</label>
+        <input type="text" name="resp_tem_anim" placeholder="" class="form-control" value="{{request.form['resp_tem_anim'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_qual">Qual</label>
+        <input type="text" name="resp_qual" placeholder="" class="form-control" value="{{request.form['resp_qual'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_pais_sep">Os pais são separados</label>
+        <input type="text" name="resp_pais_sep" placeholder="" class="form-control" value="{{request.form['resp_pais_sep'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="resp_qto_tempo">Se sim, há quanto tempo</label>
+        <input type="text" name="resp_qto_tempo" placeholder="" class="form-control" value="{{request.form['resp_qto_tempo'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

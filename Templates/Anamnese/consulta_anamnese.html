@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='consultaanamnese.css')}}">
+
+
+
+<h3>{% block title %} DETALHES DA ANAMNESE {% endblock %}</h3>
+
+<div class="contanam" id="conteudo">
+    <label_aluno> Informações:</label_aluno>
+    <p><label_aluno> NOME DO ALUNO:</label_aluno> <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno> <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno> <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno> <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno> <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+
+    <h4>DADOS DO RESPONSÁVEL</h4>
+    <p><label_anamnese>Nome do Responsável pela pesquisa</label_anamnese>   <detalhe_anamnese>resp_nome</detalhe_anamnese>
+    <p><label_anamnese>Grau de Parentesco</label_anamnese>   <detalhe_anamnese> resp_grau_par</detalhe_anamnese>
+    <p><label_anamnese>Telefone para Contato</label_anamnese>   <detalhe_anamnese>resp_fone_contato</detalhe_anamnese>
+    <p><label_anamnese>Você considera que suas respostas são válidas?</label_anamnese>   <detalhe_anamnese>resp_resp_val</detalhe_anamnese>
+    <p><label_anamnese>Residência</label_anamnese>   <detalhe_anamnese>resp_reside</detalhe_anamnese>
+    <p><label_anamnese>Tem irmãos?</label_anamnese>   <detalhe_anamnese>resp_tem_irm</detalhe_anamnese>
+    <p><label_anamnese>Quantos?</label_anamnese>   <detalhe_anamnese>resp_quantos</detalhe_anamnese>
+    <p><label_anamnese>Tem animais?</label_anamnese>   <detalhe_anamnese>resp_tem_anim</detalhe_anamnese>
+    <p><label_anamnese>Qual?</label_anamnese>   <detalhe_anamnese>resp_qual</detalhe_anamnese>
+    <p><label_anamnese>Pais separados?</label_anamnese>   <detalhe_anamnese>resp_pais_sep</detalhe_anamnese>
+    <p><label_anamnese>Se sim, há quanto tempo?</label_anamnese>   <detalhe_anamnese>resp_qto_tempo</detalhe_anamnese>
+
+    <h4>RELACIONAMENTO FAMILIAR</h4>
+    <p><label_anamnese>Em que momento a família costuma estar reunida?</label_anamnese>   <detalhe_anamnese>rel_fam_momento</detalhe_anamnese>
+    <p><label_anamnese>Quais atividades gosta de compartilhar com a mãe?</label_anamnese>   <detalhe_anamnese>rel_fam_ativ_mae</detalhe_anamnese>
+    <p><label_anamnese>Quais atividades gosta de compartilhar com o pai?</label_anamnese>   <detalhe_anamnese>rel_fam_ativ_pai</detalhe_anamnese>
+    <p><label_anamnese>Como é o relacionamento com os irmãos?</label_anamnese>   <detalhe_anamnese>rel_fam_rel_irmaos</detalhe_anamnese>
+    <p><label_anamnese>Fica aos cuidados de outras pessoas? De Quem? Como é o relacionamento da criança com essa pessoa?</label_anamnese>   <detalhe_anamnese>rel_fam_cuidados_outros</detalhe_anamnese>
+
+
+    <h4>PRIMEIROS ANOS DE VIDA</h4>
+    <p><label_anamnese>Condições de Nascimento (tipo de parto / prematuro / alguma intercorrência)</label_anamnese>   <detalhe_anamnese>prim_anos_condicoes</detalhe_anamnese>
+    <p><label_anamnese>Espaços escolares que já frequentou. Quanto tempo? Por que saiu?</label_anamnese>   <detalhe_anamnese>prim_anos_espacos</detalhe_anamnese>
+
+
+    <h4>DIA A DIA DA CRIANÇA</h4>
+    <p><label_anamnese>Que horas a criança costuma dormir?</label_anamnese>   <detalhe_anamnese>dia_dia_horas_dormir</detalhe_anamnese>
+    <p><label_anamnese>Que horas a criança costuma acordar?</label_anamnese>   <detalhe_anamnese>dia_dia_horas_acordar</detalhe_anamnese>
+    <p><label_anamnese>Faz alguma atividade fora da escola?</label_anamnese>   <detalhe_anamnese>dia_dia_faz_ativ</detalhe_anamnese>
+    <p><label_anamnese>Quais?</label_anamnese>   <detalhe_anamnese>dia_dia_quais</detalhe_anamnese>
+    <p><label_anamnese>Quantas vezes por semana?</label_anamnese>   <detalhe_anamnese>dia_dia_qtas_vezes</detalhe_anamnese>
+    <p><label_anamnese>Brinca sozinho</label_anamnese>   <detalhe_anamnese>dia_dia_brinca_so</detalhe_anamnese>
+    <p><label_anamnese>Se não, com quem?</label_anamnese>   <detalhe_anamnese>dia_dia_com_quem</detalhe_anamnese>
+    <p><label_anamnese>A criança tem contato com aparelhos eletrônicos quando esta em casa?</label_anamnese>   <detalhe_anamnese>dia_dia_cont_elet</detalhe_anamnese>
+    <p><label_anamnese>Se sim, quais?</label_anamnese>   <detalhe_anamnese>dia_dia_elet_quais</detalhe_anamnese>
+    <p><label_anamnese>Costuma participar da organização de briquedos?</label_anamnese>   <detalhe_anamnese>dia_dia_org_brinq</detalhe_anamnese>
+    <p><label_anamnese>A família tem o hábito de leitura em casa?</label_anamnese>   <detalhe_anamnese>dia_dia_hab_leitura</detalhe_anamnese>
+    <p><label_anamnese>A criança gosta de ouvir música?</label_anamnese>   <detalhe_anamnese>dia_dia_ouvir_mus</detalhe_anamnese>
+    <p><label_anamnese>Qual tipo de música?</label_anamnese>   <detalhe_anamnese>dia_dia_tipo_mus</detalhe_anamnese>
+    <p><label_anamnese>Descreva a rotina da criança em um dia normal (dia útil)</label_anamnese>   <detalhe_anamnese>dia_dia_rotina</detalhe_anamnese>
+
+
+    <h4>VIDA SOCIAL DA CRIANÇA</h4>
+    <p><label_anamnese>O que faz com seu filho em um dia de lazer?</label_anamnese>   <detalhe_anamnese>vs_lazer</detalhe_anamnese>
+    <p><label_anamnese>Como é a iteração com outras crianças em espaços públicos?</label_anamnese>   <detalhe_anamnese>vs_iter_loc_publico</detalhe_anamnese>
+    <p><label_anamnese>Como é a iteração com outras crianças quando as recebe em casa?</label_anamnese>   <detalhe_anamnese>vs_iter_casa</detalhe_anamnese>
+
+
+    <h4>VIVÊNCIAS PESSOAIS</h4>
+    <p><label_anamnese>Expressa medos (animais, pessoas, objetos, situações, etc)?</label_anamnese>   <detalhe_anamnese>vp_medos</detalhe_anamnese>
+    <p><label_anamnese>Quais?</label_anamnese>   <detalhe_anamnese>vp_quais_medos</detalhe_anamnese>
+    <p><label_anamnese>Quais atitudes os pais adotam diante desses medos?</label_anamnese>   <detalhe_anamnese>vp_quais_atit</detalhe_anamnese>
+    <p><label_anamnese>Viveu alguma situação traumática (roubo, morte de pessoas próximas, agressão física)?</label_anamnese>   <detalhe_anamnese>vp_trauma</detalhe_anamnese>
+    <p><label_anamnese>Se sim, quais?</label_anamnese>   <detalhe_anamnese>vp_trauma_quais</detalhe_anamnese>
+
+
+    <h4>AMAMENTAÇÃO / ALIMENTAÇÃO</h4>
+    <p><label_anamnese>Amamentou?</label_anamnese>   <detalhe_anamnese>al_amamentou</detalhe_anamnese>
+    <p><label_anamnese>Tem alguma restrição alimentar?</label_anamnese>   <detalhe_anamnese>al_restricao</detalhe_anamnese>
+    <p><label_anamnese>Quais?</label_anamnese>   <detalhe_anamnese>al_quais</detalhe_anamnese>
+
+
+    <h4>SONO</h4>
+    <p><label_anamnese>Divide o quarto com alguém?</label_anamnese>   <detalhe_anamnese>sono_divide_quarto</detalhe_anamnese>
+    <p><label_anamnese>Se sim, com quem?</label_anamnese>   <detalhe_anamnese>sono_divide_com_quem</detalhe_anamnese>
+    <p><label_anamnese>Dorme durante o dia?</label_anamnese>   <detalhe_anamnese>sono_dorme_dia</detalhe_anamnese>
+    <p><label_anamnese>Tem rotina ou hábitos para dormir?</label_anamnese>   <detalhe_anamnese>sono_tem_rotina</detalhe_anamnese>
+    <p><label_anamnese>Quais?</label_anamnese>   <detalhe_anamnese>sono_qual_rotina</detalhe_anamnese>
+    <p><label_anamnese>Como é o sono (pesado, agitado, com pesadelos, tranquilo)?</label_anamnese>   <detalhe_anamnese>sono_como_e</detalhe_anamnese>
+
+
+    <h4>SAÚDE</h4>
+    <p><label_anamnese>Tem alguma questão relativa a saúde (ou de nascimento) que seja relevante?</label_anamnese>   <detalhe_anamnese>saude_tem_questao</detalhe_anamnese>
+    <p><label_anamnese>Relate?</label_anamnese>   <detalhe_anamnese>saude_relate</detalhe_anamnese>
+    <p><label_anamnese>Já passou por cirurgias?</label_anamnese>   <detalhe_anamnese>saude_cirurgia</detalhe_anamnese>
+    <p><label_anamnese>Se sim, quais?</label_anamnese>   <detalhe_anamnese>saude_ciruria_qual</detalhe_anamnese>
+    <p><label_anamnese>Já sofreu algum acidente?</label_anamnese>   <detalhe_anamnese>saude_acidente</detalhe_anamnese>
+    <p><label_anamnese>Se sim, como foi?</label_anamnese>   <detalhe_anamnese>saude_acidente_como_foi</detalhe_anamnese>
+    <p><label_anamnese>Quais doenças infantis já teve?</label_anamnese>   <detalhe_anamnese>saude_doencas_inf</detalhe_anamnese>
+    <p><label_anamnese>A criança apresenta alguma alergia?</label_anamnese>   <detalhe_anamnese>saude_alergia</detalhe_anamnese>
+    <p><label_anamnese>Se sim, quais?</label_anamnese>   <detalhe_anamnese>saude_alergia_qual</detalhe_anamnese>
+    <p><label_anamnese>Quais procedimentos a família seguem em caso de reação alergica?</label_anamnese>   <detalhe_anamnese>saude_alergia_proc</detalhe_anamnese>
+    <p><label_anamnese>A família tem alguma alergia?</label_anamnese>   <detalhe_anamnese>saude_alergia_fam</detalhe_anamnese>
+    <p><label_anamnese>Se sim, quais?</label_anamnese>   <detalhe_anamnese>saude_alergia_fam_qual</detalhe_anamnese>
+    <p><label_anamnese>A criança tem ou teve convulsões</label_anamnese>   <detalhe_anamnese>saude_convulsao</detalhe_anamnese>
+    <p><label_anamnese>Em quais situações?</label_anamnese>   <detalhe_anamnese>saude_convulsao_sit</detalhe_anamnese>
+    <p><label_anamnese>A criança tem ou teve otite (infecção no ouvido)?</label_anamnese>   <detalhe_anamnese>saude_otite</detalhe_anamnese>
+    <p><label_anamnese>Com que frequência?</label_anamnese>   <detalhe_anamnese>saude_otite_freq</detalhe_anamnese>
+    <p><label_anamnese>A criança já fez audiometria?</label_anamnese>   <detalhe_anamnese>saude_audiom</detalhe_anamnese>
+    <p><label_anamnese>Quando?</label_anamnese>   <detalhe_anamnese>saude_audiom_qdo</detalhe_anamnese>
+    <p><label_anamnese>Foi constatada alguma alteração quanto à aldição?</label_anamnese>   <detalhe_anamnese>saude_audiom_alter</detalhe_anamnese>
+    <p><label_anamnese>Qual tipo/gravidade?</label_anamnese>   <detalhe_anamnese>saude_audiom_grav</detalhe_anamnese>
+    <p><label_anamnese>Já foi submetido a exame oftalmológico?</label_anamnese>   <detalhe_anamnese>saude_exam_oft</detalhe_anamnese>
+    <p><label_anamnese>Quando?</label_anamnese>   <detalhe_anamnese>saude_exam_oft_qdo</detalhe_anamnese>
+    <p><label_anamnese>Foi constatada alguma alteração?</label_anamnese>   <detalhe_anamnese>saude_exam_oft_alt</detalhe_anamnese>
+    <p><label_anamnese>Qual tipo/gravidade?</label_anamnese>   <detalhe_anamnese>saude_exam_oft_grav</detalhe_anamnese>
+
+
+    <h4>DESENVOLVIMENTO PSICOMOTOR</h4>
+    <p><label_anamnese>Como foi o período de gestação e o parto?</label_anamnese>   <detalhe_anamnese>psi_gestacao</detalhe_anamnese>
+    <p><label_anamnese>Engatinhou?</label_anamnese>   <detalhe_anamnese>psi_engatinhou</detalhe_anamnese>
+    <p><label_anamnese>Com quanto tempo começou a andar?</label_anamnese>   <detalhe_anamnese>psi_qdo_engatinhou</detalhe_anamnese>
+    <p><label_anamnese>Como é sua movimentação atualmente (adequada, desastrada, cai muito)?</label_anamnese>   <detalhe_anamnese>psi_como_e</detalhe_anamnese>
+    <p><label_anamnese>Há aspectos do desenvolvimento da criança com os quais sejam motivo de preocupação? Quais?</label_anamnese>   <detalhe_anamnese>psi_aspectos</detalhe_anamnese>
+    <p><label_anamnese>A criança já recebeu, atendimento fora da escola (psicologo, psicopedago, fonoaudiologo e/ou neurologista?</label_anamnese>   <detalhe_anamnese>psi_atend_fora_escola</detalhe_anamnese>
+    <p><label_anamnese>Se sim, quais?</label_anamnese>   <detalhe_anamnese>psi_atend_fora_escola_qual</detalhe_anamnese>
+
+
+    <h4>REAÇÕES EMOCIONAIS</h4>
+    <p><label_anamnese>Em linhas gerais, quais são as características mais marcantes da criança?</label_anamnese>   <detalhe_anamnese>rea_emo_carac_marc</detalhe_anamnese>
+    <p><label_anamnese>Usa algum objeto de apoio afetivo (paninho, brinquedo, etc?</label_anamnese>   <detalhe_anamnese>rea_emo_obj_efet</detalhe_anamnese>
+    <p><label_anamnese>Quais? Em que situações usa?</label_anamnese>   <detalhe_anamnese>rea_emo_obj_efet_sit</detalhe_anamnese>
+    <p><label_anamnese>Como é a relação com o pai?</label_anamnese>   <detalhe_anamnese>rea_emo_rel_pai</detalhe_anamnese>
+    <p><label_anamnese>Como é a relação com a mãe?</label_anamnese>   <detalhe_anamnese>rea_emo_rel_mae</detalhe_anamnese>
+    <p><label_anamnese>Como é a relação com os avós?</label_anamnese>   <detalhe_anamnese>rea_emo_rel_avos</detalhe_anamnese>
+    <p><label_anamnese>Como é a relação com os cuidadores?</label_anamnese>   <detalhe_anamnese>rea_emo_rel_cuid</detalhe_anamnese>
+
+
+    <h4>OBSERVAÇÕES FINAIS</h4>
+    <p><label_anamnese>Há algo a complementar que considera importante relatar aos profissionais desta escola? </label_anamnese>   <detalhe_anamnese>obs_finais</detalhe_anamnese>
+
+</div>
+
+    <p><form onclick="CriaPDF()" value="Criar PDF" id="btnpdf"><button type="submit">Gera PDF</button></form></p>
+    <p><form onclick="print()" value="imprimir" id="btnImprimir"><button type="submit">Imprimir</button></form></p>
+    <p><form action="{{ url_for('menu_area_logada') }}"><button type="submit">Sair</button></form></p>
+
+<script>
+    // FUNÇÃO JAVASCRIPT IMPRIMIR
+  function print() {
+        var minhaTabela = document.getElementById('conteudo').innerHTML;
+
+        // CRIA UM OBJETO WINDOW
+        var win = window.open('', '', 'height=700,width=700');
+        win.document.write('<html><head>');
+        win.document.write('<title>Detalhe Anamnese do Aluno</title>');   // <title> CABEÇALHO DO PDF.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(minhaTabela);                       // O CONTEUDO DA TABELA DENTRO DA TAG BODY
+        win.document.write('</body></html>');
+        win.document.close(); 	                               // FECHA A JANELA
+        win.print();                                           // IMPRIME O CONTEUDO
+
+    }
+</script>
+
+
+<script>
+    // FUNÇÃO JAVASCRIPT GERAR PDF
+    function CriaPDF() {
+
+        var pdf = new jsPDF('p', 'pt', 'letter')
+            pdf.text('Detalhe Anamnese Aluno',60,60)
+
+// SOURCE A FONTE PODE SER HTML-formatted string, OU UMA REFERÊNCIA
+// PARA UM ELEMENTO ONDE O TEXTO SERÁ EXTRAÍDO.
+            , source = $('#conteudo')[0]
+
+// we support special element handlers. Register them with jQuery-style
+// ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+// There is no support for any other type of selectors
+// (class, of compound) at this time.
+            , specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        }
+
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+
+        pdf.fromHTML(
+            source // HTML string or DOM elem ref.
+            , margins.left // x coord
+            , margins.top // y coord
+            , {
+                'width': margins.width // max width of content on PDF
+                , 'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF
+                //          this allow the insertion of new lines after html
+                pdf.save('Detalhe Anamnese do Aluno.pdf');
+            },
+            margins
+        )
+    }
+
+</script>
+
+{% endblock %}

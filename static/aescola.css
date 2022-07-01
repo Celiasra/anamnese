@@ -1,0 +1,39 @@
+body{
+    background-color:#ffffff;
+    font-family:nunito;
+}
+
+
+#id{
+    display:none;
+}
+
+h3{
+    position:absolute;
+    color:black;
+    border:none;
+    margin-top:3%;
+    left:4%;
+}
+
+div .textoescola{
+    position:absolute;
+    background-color:white;
+    width:40%;
+    left:5%;
+    margin-top:10%;
+}
+
+.fotoescola{
+    width:30%;
+    position:absolute;
+    display:block;
+    left:60%;
+    margin-top:5%;
+}
+
+.textoescola{
+    position:relative;
+    margin-top:20%;
+    text-align:justify;
+}

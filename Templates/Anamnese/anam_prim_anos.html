@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cad_responsavel.css')}}">
+<h3>{% block title %} PRIMEIROS ANOS DE VIDA {% endblock %}</h3>
+<div class="cad_resp">
+    <p><label_aluno> NOME DO ALUNO:</label_aluno>   <detalhe_aluno>{{ detalhe_aluno['nome_aluno'] }}</detalhe_aluno></p>
+    <p><label_aluno> RA DO ALUNO:</label_aluno>         <detalhe_aluno>{{ detalhe_aluno['ra'] }}</detalhe_aluno></p>
+    <p><label_aluno>DATA DE NASCIMENTO:</label_aluno>  <detalhe_aluno>{{ detalhe_aluno['nascimento'] }}</detalhe_aluno> </p>
+    <p><label_aluno>SÉRIE:</label_aluno>               <detalhe_aluno>{{ detalhe_aluno['num_ser'] }} </detalhe_aluno></p>
+    <p><label_aluno>TURMA:</label_aluno>              <detalhe_aluno>{{ detalhe_aluno['turma'] }} </detalhe_aluno></p>
+<br>
+<br>
+<form method="post">
+    <div class="form-group">
+        <label for="prim_anos_condicoes">Condições de Nascimento (tipo de parto / prematuro / alguma intercorrência):</label>
+        <input type="text" name="prim_anos_condicoes" placeholder="" class="form-control" value="{{request.form['prim_anos_condicoes'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="prim_anos_espacos">Espaços escolares que já frequentou. Quanto tempo? Por que saiu?</label>
+        <input type="text" name="prim_anos_espacos" placeholder="" class="form-control" value="{{request.form['prim_anos_espacos'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Próxima</button>
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='aescola.css')}}">
+
+    <h3>A ESCOLA</h3>
+
+    <div class="textoescola">
+        A Escola Municipal de Ensino Infantil e Fundamental Monsenhor Elídio Mantovani foi inaugurada em
+        20/12/2001, nesse início era apenas responsável pelo ensino fundamental e foi a partir do ano de 2018 é que o
+        ensino infantil passa a fazer parte da Unidade Escolar.
+        <br>
+        Seu nome é uma homenagem ao Padre Monsenhor Elídio Mantovani, que nasceu em 16/04/1939 e faleceu em
+        25/05/1999.
+        <br>
+        O padre trabalhou na igreja Matriz Catedral Santo Antônio de Osasco e deixou marcas definitivas na região.
+        <br>
+        Era um sacerdote exemplar, destacou-se por seus conhecimentos teólogicos e sua sabedoria, sempre preocupado
+            com atividades sociais para auxiliar os menos favorecidos.
+    </div>
+
+    <div  class="fotoescola">
+        <img name="fotoescola2" src="{{ url_for('static', filename='fotoescola2.png')}}"/>
+    </div>
+
+{% endblock %}

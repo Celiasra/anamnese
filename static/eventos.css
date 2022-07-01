@@ -1,0 +1,64 @@
+body{
+    background-color:#ffffff;
+    font-family:nunito;
+}
+
+
+#id{
+    display:none;
+}
+
+h3{
+    position:absolute;
+    color:black;
+    border:none;
+    margin-top:3%;
+    left:45%;
+}
+
+.table{
+    position:absolute;
+    background-color:white;
+    width:40%;
+    left:30%;
+    margin-top:10%;
+}
+
+td{
+    border:solid 2px #00CD00;
+    border-radius:10px;
+    padding:10px;
+    background-color:#00CD00;
+    color:#FFFFFF;
+    font-weight:bold;
+}
+
+.formcontato{
+    width:30%;
+    position:absolute;
+    display:block;
+    left:60%;
+    margin-top:5%;
+}
+
+.textoescola{
+    position:relative;
+    margin-top:20%;
+    text-align:justify;
+}
+
+input{
+    background-color:white;
+    border-radius:5px;
+    padding:5px;
+    color:black;
+    top:-5px;
+    cursor:pointer;
+}
+
+input:hover{
+    color:black;
+    transition:ease-in 0.3s;
+    border-bottom: none;
+    background-color:#FFD700;
+}

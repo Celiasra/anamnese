@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='eventos.css')}}">
+
+    <h3>EVENTOS E NOTÍCIAS</h3>
+
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Data</th>
+                    <th>Evento</th>
+                </tr>
+            </thead>
+                <tr>
+                    <td>08/08 a 12/08/2022</td>
+                    <td>Prova Brasil</td>
+                </tr>
+                <tr>
+                    <td>12/08/2022</td>
+                    <td>Feira de Ciência</td>
+                </tr>
+                <tr>
+                    <td>17/09/2022</td>
+                    <td>Setembro Amarelo</td>
+                </tr>
+        </table>
+
+{% endblock %}
